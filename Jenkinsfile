@@ -3,25 +3,25 @@ pipeline{
   stages{
     stage('Source'){
       steps{
-         git branch:'main',url:'https://github.com/Raju7860/estore-Admin.git'
+         git branch:'main',url:'https://github.com/Raju7860/ecommerce3.git'
       } 
     }
 
     stage('Compile'){
       steps{
-        bat "npm install"
+        bat "./mvnw compile"
     }
       } 
     
       stage('Test'){
       steps{
-        bat "npm run test "
+        bat "./mvnw test"
     }
       } 
     
      stage('Build'){
       steps{
-        bat "npm run build"
+        bat "./mvnw package"
     }
       } 
     
